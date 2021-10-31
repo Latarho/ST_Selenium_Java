@@ -7,7 +7,7 @@ import st_addressbook.model.GroupData;
 public class GroupModificationTests extends TestBase{
 
     @Test
-    public void testGroupCreation() {
+    public void testGroupModification() {
         app.getNavigationHelper().gotoGroupPage();
         app.getGroupHelper().selectGroup();
         app.getGroupHelper().initGroupModification();
