@@ -1,12 +1,12 @@
 package st_addressbook.appmanager;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.WebDriver;
 import st_addressbook.model.GroupData;
 
 public class GroupHelper extends HelperBase {
 
-    public GroupHelper(ChromeDriver driver) {
+    public GroupHelper(WebDriver driver) {
         // Обращение к конструктору базового класса.
         super(driver);
     }

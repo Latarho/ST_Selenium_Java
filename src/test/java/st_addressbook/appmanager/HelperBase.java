@@ -1,13 +1,13 @@
 package st_addressbook.appmanager;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.WebDriver;
 
 public class HelperBase {
-    protected ChromeDriver driver;
+    protected WebDriver driver;
 
     // Создан конструктор, параметр - ссылка на драйвер.
-    public HelperBase(ChromeDriver driver) {
+    public HelperBase(WebDriver driver) {
         this.driver = driver;
     }
 
