@@ -21,16 +21,15 @@ public class ApplicationManager {
 
 
     public void init() {
-        if (browser == BrowserType.CHROME) {
+        if (browser.equals(BrowserType.CHROME)) {
             driver = new ChromeDriver();
-        } else if (browser == BrowserType.FIREFOX) {
+        } else if (browser.equals(BrowserType.FIREFOX)) {
             driver = new FirefoxDriver();
-        } else if (browser == BrowserType.EDGE) {
+        } else if (browser.equals(BrowserType.EDGE)) {
             driver = new EdgeDriver();
         }
 
         driver.get("http://localhost/addressbook/");
-        // Вызов метода, в нем можно использовать данный атрибут.
         groupHelper = new GroupHelper(driver);
         contactHelper = new ContactHelper(driver);
         navigationHelper = new NavigationHelper(driver);

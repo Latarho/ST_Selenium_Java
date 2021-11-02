@@ -7,6 +7,7 @@ import org.junit.Before;
 
 public class TestBase {
 
+    // В качестве параметра указываем браузер для запуска.
     protected final ApplicationManager app = new ApplicationManager(BrowserType.CHROME);
 
     @Before
