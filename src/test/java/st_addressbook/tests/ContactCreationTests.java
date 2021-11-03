@@ -11,7 +11,8 @@ public class ContactCreationTests extends TestBase {
         app.getNavigationHelper().gotoContactPage();
         app.getContactHelper().initContactCreation();
         app.getContactHelper().fillContactForm(new ContactData("Serg", "Pomytkin", "Kotik",
-                "CryptoCat", "MoscowCity", "88000000", "89990000000"));
+                "CryptoCat", "MoscowCity", "88000000", "89990000000",
+                "test1"), true);
         app.getContactHelper().submitContactCreation();
         app.getContactHelper().returnToContactPage();
     }

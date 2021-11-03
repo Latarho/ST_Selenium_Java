@@ -19,6 +19,10 @@ public class GroupHelper extends HelperBase {
         click(By.name("submit"));
     }
 
+    /**
+     * Метод - заполнение формы при создании группы.
+     * @param groupData Объект модели для заполнения формы группы.
+     */
     public void fillGroupForm(GroupData groupData) {
         type(By.name("group_name"), groupData.name());
         type(By.name("group_header"), groupData.header());
