@@ -2,7 +2,6 @@ package st_addressbook.appmanager;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 import st_addressbook.model.ContactData;
