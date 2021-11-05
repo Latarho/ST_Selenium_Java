@@ -75,4 +75,11 @@ public class ContactHelper extends HelperBase {
         return isElementPresent(By.name("selected[]"));
     }
 
+    /**
+     * Метод - подсчет элементов на странице.
+     * @return Количество элементов в формате int.
+     */
+    public int getContactCount() {
+        return driver.findElements(By.name("selected[]")).size();
+    }
 }

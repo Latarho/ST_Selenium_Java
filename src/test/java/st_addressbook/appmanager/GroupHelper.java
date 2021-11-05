@@ -60,4 +60,12 @@ public class GroupHelper extends HelperBase {
         return isElementPresent(By.name("selected[]"));
     }
 
+    /**
+     * Метод - подсчет элементов на странице.
+     * @return Количество элементов в формате int.
+     */
+    public int getGroupCount() {
+        return driver.findElements(By.name("selected[]")).size();
+    }
+
 }
