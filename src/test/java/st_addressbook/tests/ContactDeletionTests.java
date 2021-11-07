@@ -4,6 +4,8 @@ import org.junit.Assert;
 import org.junit.Test;
 import st_addressbook.model.ContactData;
 
+import java.util.List;
+
 public class ContactDeletionTests extends TestBase {
 
     @Test
@@ -14,12 +16,12 @@ public class ContactDeletionTests extends TestBase {
                     "CryptoCat", "MoscowCity", "88000000", "89990000000",
                     "test1"), true);
         }
-        int before = app.getContactHelper().getContactCount();
-        app.getContactHelper().selectContact(before - 1);
+        List<ContactData> before = app.getContactHelper().getContactList();
+        app.getContactHelper().selectContact(before.size() - 1);
         app.getContactHelper().deleteSelectedContacts();
         app.getContactHelper().returnToContactPage();
-        int after = app.getContactHelper().getContactCount();
-        Assert.assertEquals(after, before - 1);
+        List<ContactData> after = app.getContactHelper().getContactList();
+        Assert.assertEquals(after.size(), before.size() - 1);
     }
 
 }

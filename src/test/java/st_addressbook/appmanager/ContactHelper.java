@@ -3,8 +3,13 @@ package st_addressbook.appmanager;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import st_addressbook.model.ContactData;
+import st_addressbook.model.GroupData;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ContactHelper extends HelperBase {
 
@@ -81,5 +86,21 @@ public class ContactHelper extends HelperBase {
      */
     public int getContactCount() {
         return driver.findElements(By.name("selected[]")).size();
+    }
+
+    /**
+     * Метод - формирование списка элементов представленных на странице.
+     * @return Список контактов.
+     */
+    public List<ContactData> getContactList() {
+        List<ContactData> contacts = new ArrayList<ContactData>();
+        List<WebElement> elements = driver.findElements(By.name("entry"));
+        for (WebElement element : elements) {
+            String name = element.getText();
+            ContactData contact = new ContactData(name, null, null, null, null,
+                    null, null, null);
+            contacts.add(contact);
+        }
+        return contacts;
     }
 }
