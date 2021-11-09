@@ -32,17 +32,17 @@ public class ContactHelper extends HelperBase {
      * @param creation True для теста - создание нового контакта, False для теста - модификация выбранного контакта.
      */
     public void fillContactForm(ContactData contactData, boolean creation) {
-        type(By.name("firstname"), contactData.firstName());
-        type(By.name("lastname"), contactData.lastName());
-        type(By.name("nickname"), contactData.nickName());
-        type(By.name("company"), contactData.company());
-        type(By.name("address"), contactData.address());
-        type(By.name("home"), contactData.homePhone());
-        type(By.name("mobile"), contactData.mobilePhone());
+        type(By.name("firstname"), contactData.getFirstName());
+        type(By.name("lastname"), contactData.getLastName());
+        type(By.name("nickname"), contactData.getNickName());
+        type(By.name("company"), contactData.getCompany());
+        type(By.name("address"), contactData.getAddress());
+        type(By.name("home"), contactData.getHomePhone());
+        type(By.name("mobile"), contactData.getMobilePhone());
 
         // Если доступен выпадающий список, то выбираем группу (тест на создании контакта).
         if (creation) {
-            new Select(driver.findElement(By.name("new_group"))).selectByVisibleText(contactData.group());
+            new Select(driver.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
         } else {
             Assert.assertFalse(isElementPresent(By.name("new_group")));
         }
